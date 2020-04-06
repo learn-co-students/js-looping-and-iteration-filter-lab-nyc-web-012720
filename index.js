@@ -1,18 +1,11 @@
-// Code your solution in this file
-function findMatching (drivers, string) {
-    return drivers.filter(function (driverName){
-        return driverName.toUpperCase() === string.toUpperCase();
-    });
-}
+const findMatching = (drivers, name) => {
+    return drivers.filter( driver => driver.toUpperCase() === name.toUpperCase())
+};
 
-function fuzzyMatch (drivers, string){
-    return drivers.filter(function (driver){
-        return driver.charAt(driver[0]) === string.charAt(string[0]);
-    });
-}
+const fuzzyMatch = (drivers, name) => {
+    return drivers.filter(driver => driver.charAt(0) === name.charAt(0))
+};
 
-function matchName(drivers, string){
-    return drivers.filter(function (driver){
-        return driver.name === string;
-    });
+const matchName = (drivers, name) => {
+    return drivers.filter(driver => driver.name === name)
 }
